@@ -35,7 +35,10 @@ class ProdukController extends Controller
         }
     }
 
-    $produks = $query->get();
+    $perPage = $request->input('perPage', 5);
+
+    // Pagination
+    $produks = $query->paginate($perPage)->appends($request->query());
 
     return view('admin.produk.index', compact('produks'));
     }
