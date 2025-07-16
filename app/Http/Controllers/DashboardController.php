@@ -30,4 +30,10 @@ class DashboardController extends Controller
 
         return view('dashboard', compact('totalProduk', 'totalTransaksi', 'users', 'totalUser', 'penghasilanPerBulan'));
     }
+
+    public function home()
+    {
+        $produk = Produk::all();
+        return view('welcome', compact('produk'));
+    }
 }

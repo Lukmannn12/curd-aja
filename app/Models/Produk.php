@@ -33,4 +33,8 @@ class Produk extends Model
     {
         return $this->hasMany(Transaksi::class);
     }
+    public function carts()
+    {
+        return $this->hasMany(Cart::class);
+    }
 }
